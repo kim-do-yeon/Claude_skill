@@ -1,7 +1,7 @@
 ---
 name: tune
-description: 프롬프트 초안을 지정한 모델(opus / fable / sonnet)의 프롬프트 가이드에 맞춰 튜닝한 뒤, 튜닝본으로 답변한다. 사용법 /tune <model> <초안>
-argument-hint: <opus|fable|sonnet> <프롬프트 초안>
+description: 프롬프트 초안을 지정한 모델(opus / opus5 / fable / sonnet)의 프롬프트 가이드에 맞춰 튜닝한 뒤, 튜닝본으로 답변한다. 사용법 /tune <model> <초안>
+argument-hint: <opus|opus5|fable|sonnet> <프롬프트 초안>
 ---
 
 # tune — 모델별 프롬프트 튜너
@@ -14,6 +14,7 @@ argument-hint: <opus|fable|sonnet> <프롬프트 초안>
 `$ARGUMENTS`의 **첫 공백 이전 토큰**을 모델 키로 본다. 나머지 전체가 프롬프트 초안이다.
 매핑:
 - `opus`, `opus4.8`, `4.8`      → `guides/opus-4-8.md`
+- `opus5`, `opus-5`             → `guides/opus-5.md`
 - `fable`, `mythos`, `fable5`    → `guides/fable-5.md`
 - `sonnet`, `sonnet5`           → `guides/sonnet-5.md`
 

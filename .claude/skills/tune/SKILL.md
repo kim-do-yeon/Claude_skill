@@ -1,7 +1,7 @@
 ---
 name: tune
-description: 프롬프트 초안을 지정한 모델(opus / opus5 / fable / sonnet)의 프롬프트 가이드에 맞춰 튜닝한 뒤, 튜닝본으로 답변한다. 사용법 /tune <model> <초안>
-argument-hint: <opus|opus5|fable|sonnet> <프롬프트 초안>
+description: 프롬프트 초안을 지정한 모델(opus=Opus 5 / opus4.8 / fable / sonnet)의 프롬프트 가이드에 맞춰 튜닝한 뒤, 튜닝본으로 답변한다. 사용법 /tune <model> <초안>
+argument-hint: <opus|opus4.8|fable|sonnet> <프롬프트 초안>
 ---
 
 # tune — 모델별 프롬프트 튜너
@@ -13,13 +13,13 @@ argument-hint: <opus|opus5|fable|sonnet> <프롬프트 초안>
 ### 1. 모델 판별 (첫 토큰)
 `$ARGUMENTS`의 **첫 공백 이전 토큰**을 모델 키로 본다. 나머지 전체가 프롬프트 초안이다.
 매핑:
-- `opus`, `opus4.8`, `4.8`      → `guides/opus-4-8.md`
-- `opus5`, `opus-5`             → `guides/opus-5.md`
+- `opus`, `opus5`, `opus-5`     → `guides/opus-5.md`
+- `opus4.8`, `opus4-8`, `4.8`   → `guides/opus-4-8.md`
 - `fable`, `mythos`, `fable5`    → `guides/fable-5.md`
 - `sonnet`, `sonnet5`           → `guides/sonnet-5.md`
 
-첫 토큰이 위 어디에도 안 맞으면: **전체를 초안으로 간주**하고 기본 `guides/opus-4-8.md`를 쓰되,
-응답 맨 앞에 `※ 모델 미지정 → Opus 4.8 가이드 기본 적용` 한 줄을 남긴다.
+첫 토큰이 위 어디에도 안 맞으면: **전체를 초안으로 간주**하고 기본 `guides/opus-5.md`를 쓰되,
+응답 맨 앞에 `※ 모델 미지정 → Opus 5 가이드 기본 적용` 한 줄을 남긴다.
 
 > 주의: 여기서 지정하는 모델은 **지금 이 세션이 실제로 실행 중인 모델**이어야 한다.
 > (튜닝은 "이 프롬프트에 답할 모델"에 맞추는 것이므로, 세션 모델과 인자가 다르면 의미가 어긋난다.)
